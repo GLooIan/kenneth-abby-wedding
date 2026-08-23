@@ -1,0 +1,104 @@
+/* ================================================================
+   SMOKE / CLOUD LAYER — loops fully across the screen
+   ================================================================ */
+.smoke-layer {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  touch-action: none;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+.smoke-layer img {
+  pointer-events: none;
+}
+
+.smoke {
+  position: absolute;
+  width: 700px;
+  max-width: none;
+  opacity: 0;
+  animation-name: smoke-drift;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+}
+
+.smoke--1 {
+  top: 5%;
+  animation-delay: -5s;    /* negative = starts already 5s into the journey, visible immediately */
+}
+
+.smoke--2 {
+  top: 40%;
+  animation-delay: -25s;   /* starts already partway across the screen on load */
+}
+
+.smoke--3 {
+  top: 27%;
+  animation-delay: -45s;   /* starts even further along, so all three are staggered and visible right away */
+}
+
+/* starts off-screen left, drifts all the way across to off-screen right, loops forever */
+@keyframes smoke-drift {
+  0% {
+    left: -40%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
+}
+
+/* ================================================================
+  FAIRYS =)
+   ================================================================ */
+
+#fairy-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.fairy-wrap {
+  position: absolute;
+  will-change: transform;
+}
+
+.fairy {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.85;
+  transform-origin: center center;
+  --fairy-rotate: 0deg;
+  animation: fairy-flap 0.9s ease-in-out infinite;
+}
+
+/* rotation corrections so each pose reads as flying level in that direction —
+   nudge these degree values by eye until the flight path looks right */
+
+.fairy--normal { --fairy-rotate: 0deg; }
+
+@keyframes fairy-flap {
+  0%, 100% { transform: rotate(var(--fairy-rotate)) scaleX(1); }
+  50%      { transform: rotate(var(--fairy-rotate)) scaleX(0.55); }
+}

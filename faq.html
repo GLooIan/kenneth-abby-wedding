@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mainpage.css">
+<link rel="stylesheet" href="effects.css">
+<link rel="stylesheet" href="faq.css">
+</head>
+<body>
+
+<div class="site-wrapper">
+
+ <audio id="bg-music" src="assets/timeless.mp3" loop preload="auto"></audio>
+  <button id="music-toggle" class="music-toggle" aria-label="Toggle music">♪</button>
+  
+  <div id="fairy-layer"></div>
+
+  <div class="smoke-layer">
+    <img src="assets/smoke.png" class="smoke smoke--1" alt="">
+    <img src="assets/smoke.png" class="smoke smoke--2" alt="">
+    <img src="assets/smoke.png" class="smoke smoke--3" alt="">
+  </div>
+
+  <img src="assets/light.png" class="corner-lights corner-lights--left" alt="">
+  <img src="assets/light.png" class="corner-lights corner-lights--right" alt="">
+
+  <div class="faq-page">
+
+    <!-- Flower decorations — swap these src's for your own images -->
+    <img src="assets/flower-placeholder.png" class="faq-flower faq-flower--top-left" alt="">
+    <img src="assets/flower-placeholder.png" class="faq-flower faq-flower--bottom-left" alt="">
+
+    <h1 class="faq-heading">Questions</h1>
+
+    <div class="faq-list">
+
+      <div class="faq-item faq-item--blue">
+        <h2 class="faq-question">Can I Bring a Plus One?</h2>
+        <p class="faq-answer edit-me">Unfortunately, no. We've reserved a specific number of slots only, so we're unable to accommodate additional guests.</p>
+      </div>
+
+      <div class="faq-item faq-item--yellow">
+        <h2 class="faq-question">What Time Will the Reception Start?</h2>
+        <p class="faq-answer edit-me">Cocktails will start at 3:00 PM. Snacks will be available. Reception program will start at 4:00 PM.</p>
+      </div>
+
+      <div class="faq-item faq-item--green">
+        <h2 class="faq-question">Is There a Parking Space?</h2>
+        <p class="faq-answer edit-me">Yes, there is enough parking space to accommodate all our guests at the reception.</p>
+      </div>
+
+    </div>
+
+    <a href="mainpage.html" class="faq-back-link" id="back-link">Back</a>
+
+  </div>
+
+</div>
+<script src="music.js"></script>
+<script src="mainpage.js"></script>
+<script src="back-nav.js"></script>
+</body>
+</html>

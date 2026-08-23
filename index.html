@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<canvas id="matchaParticles"></canvas>
+
+<div class="flower-scene not-loaded">
+  <div class="night"></div>
+</div>
+
+<!-- ================= BUTTERFLIES ================= -->
+<div class="butterfly-scene" aria-hidden="true">
+  <img src="assets/butter1.png" class="butterfly butterfly--purple" alt="">
+  <img src="assets/butter2.png" class="butterfly butterfly--blue" alt="">
+  <img src="assets/butterfully.png" class="butterfly butterfly--pink" alt="">
+  <img src="assets/butter2.png" class="butterfly butterfly--peach" alt="">
+</div>
+<!-- Side left decoration -->
+<img src="assets/flower.png" class="side-decoration" alt="Decorative flowers">
+
+<!-- Side right decoration -->
+<img src="assets/flower.png" class="side-decoration-right" alt="Decorative flowers">
+
+<div class="invite-header">
+  <p class="invite-text-top">You're Invited</p>
+</div>
+
+
+<!-- Envelope -->
+<div class="wrapper">
+  <a href="mainpage.html" class="envelope-link" aria-label="Open wedding invitation details">
+    <img src="assets/close.png" class="envelope-img" alt="Wedding envelope">
+  </a>
+
+  <img src="assets/seall2.png" class="envelope-seal" alt="Wax seal">
+
+  <p class="invite-text-bottom">Click to open</p>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

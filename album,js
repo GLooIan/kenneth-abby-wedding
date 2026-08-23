@@ -1,0 +1,116 @@
+// Lightweight lightbox for the album gallery — no dependencies.
+// Click any .album-photo to open it full-size; arrows or ← → to navigate; Esc or overlay click to close.
+(function () {
+  const photos = Array.from(document.querySelectorAll('.album-photo'));
+  if (!photos.length) return;
+
+  const lightbox   = document.getElementById('album-lightbox');
+  const imageEl    = document.getElementById('lightbox-image');
+  const captionEl  = document.getElementById('lightbox-caption-text');
+  const countEl    = document.getElementById('lightbox-count');
+  const closeBtn   = document.getElementById('lightbox-close');
+  const prevBtn    = document.getElementById('lightbox-prev');
+  const nextBtn    = document.getElementById('lightbox-next');
+
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    const photo = photos[currentIndex];
+    const img = photo.querySelector('img');
+    imageEl.src = img.src;
+    imageEl.alt = img.alt || '';
+
+    const caption = photo.dataset.caption || '';
+    captionEl.textContent = caption;
+    countEl.textContent = (currentIndex + 1) + ' / ' + photos.length;
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % photos.length;
+    updateLightbox();
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+    updateLightbox();
+  }
+
+  photos.forEach((photo, index) => {
+    photo.addEventListener('click', () => openLightbox(index));
+    photo.setAttribute('tabindex', '0');
+    photo.setAttribute('role', 'button');
+    photo.setAttribute('aria-label', 'View photo full-size');
+    photo.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(index);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrev();
+  });
+
+  // Swipe support (mobile) — swipe left for next, swipe right for previous
+  const SWIPE_THRESHOLD = 40; // minimum horizontal distance in px to count as a swipe
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchDeltaX = 0;
+
+  const frame = lightbox.querySelector('.album-lightbox-frame');
+
+  frame.addEventListener('touchstart', (e) => {
+    const touch = e.changedTouches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+    touchDeltaX = 0;
+  }, { passive: true });
+
+  frame.addEventListener('touchmove', (e) => {
+    const touch = e.changedTouches[0];
+    touchDeltaX = touch.clientX - touchStartX;
+  }, { passive: true });
+
+  frame.addEventListener('touchend', (e) => {
+    const touch = e.changedTouches[0];
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+
+    // Ignore mostly-vertical swipes so scrolling/dismiss gestures aren't hijacked
+    if (Math.abs(deltaX) < SWIPE_THRESHOLD || Math.abs(deltaX) < Math.abs(deltaY)) {
+      return;
+    }
+
+    if (deltaX < 0) {
+      showNext();
+    } else {
+      showPrev();
+    }
+  }, { passive: true });
+})();

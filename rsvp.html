@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSVP</title>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mainpage.css">
+<link rel="stylesheet" href="effects.css">
+<link rel="stylesheet" href="rsvp.css">
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <audio id="bg-music" src="assets/timeless.mp3" loop preload="auto"></audio>
+  <button id="music-toggle" class="music-toggle" aria-label="Toggle music">♪</button>
+
+  <div id="fairy-layer"></div>
+
+
+  <div id="fairy-layer"></div>
+
+  <div class="smoke-layer">
+    <img src="assets/smoke.png" class="smoke smoke--1" alt="">
+    <img src="assets/smoke.png" class="smoke smoke--2" alt="">
+    <img src="assets/smoke.png" class="smoke smoke--3" alt="">
+  </div>
+
+  <img src="assets/light.png" class="corner-lights corner-lights--left" alt="">
+  <img src="assets/light.png" class="corner-lights corner-lights--right" alt="">
+
+  <div class="rsvp-page">
+
+    <a href="details.html" class="back-link" id="back-link">&larr; Back</a>
+
+    <p class="rsvp-eyebrow">Kindly Reply</p>
+    <h1 class="rsvp-heading">R.S.V.P.</h1>
+    <p class="rsvp-subheading">Kenneth &amp; Abby &middot; November 20, 2026</p>
+    <p class="rsvp-deadline-note">Kindly reply on or before <strong>October 31, 2026</strong></p>
+
+    <div class="rsvp-envelope" id="rsvp-envelope">
+
+      <!-- ============ FORM SIDE ============ -->
+      <form class="rsvp-card" id="rsvp-form">
+
+        <div class="field-group field-group--full">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full-name" placeholder="Juan Dela Cruz" required>
+        </div>
+
+        <div class="field-group field-group--full">
+          <label>Will you be attending?</label>
+          <div class="attend-toggle">
+            <input type="radio" id="attend-yes" name="attending" value="yes" checked>
+            <label for="attend-yes" class="toggle-btn toggle-btn--yes">Joyfully Accepts</label>
+
+            <input type="radio" id="attend-no" name="attending" value="no">
+            <label for="attend-no" class="toggle-btn toggle-btn--no">Regretfully Declines</label>
+          </div>
+        </div>
+
+        <div class="field-group field-group--full" id="guest-count-group">
+          <label for="guest-count">Number of Guests</label>
+          <select id="guest-count" name="guest-count">
+            <option value="1">Just Me</option>
+            <option value="2">Me + 1</option>
+          </select>
+        </div>
+
+        <div class="field-group field-group--full">
+          <label for="message">Message for the Couple <span class="optional">(optional)</span></label>
+          <textarea id="message" name="message" rows="3" placeholder="Leave your well-wishes here..."></textarea>
+        </div>
+
+        <button type="submit" class="rsvp-submit">Seal &amp; Send</button>
+
+      </form>
+
+      <!-- ============ CONFIRMATION SIDE ============ -->
+      <div class="rsvp-confirmation" id="rsvp-confirmation">
+      <div class="wax-seal">
+  <span class="wax-seal-initials">K&amp;A</span>
+</div>
+        <h2 class="confirmation-heading" id="confirmation-heading">Thank You!</h2>
+        <p class="confirmation-text" id="confirmation-text">
+          Your reply has been received. We can't wait to celebrate with you.
+        </p>
+        <a href="details.html" class="confirmation-link">View Wedding Details &rarr;</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<script src="music.js"></script>
+<script src="mainpage.js"></script>
+<script src="rsvp.js"></script>
+<script src="back-nav.js"></script>
+</body>
+</html>

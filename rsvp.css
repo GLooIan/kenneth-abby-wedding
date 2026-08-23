@@ -1,0 +1,463 @@
+/* ================================================================
+   Reuses the same CSS variables as mainpage.css / details.css
+   ================================================================ */
+:root {
+  --terracotta:  #C6A15B;
+  --sienna:      #A9812E;
+  --dark-brown:  #7A2E27;
+  --cream:       #FBF0EC;
+  --gold-light:  #E9CD82;
+  --text-dark:   #5C231D;
+  --sage:        #A8B79A;
+
+  --font-script: 'Alex Brush', cursive;
+  --font-serif:  'Playfair Display', serif;
+  --font-sans:   'Montserrat', sans-serif;
+}
+
+/* ================================================================
+   PAGE LAYOUT
+   ================================================================ */
+.rsvp-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 6vh 5vw 10vh;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .rsvp-page {
+    max-width: 860px;
+  }
+}
+
+.back-link {
+  align-self: flex-start;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--sienna);
+  text-decoration: none;
+  margin-bottom: 4vh;
+  transition: opacity 0.2s ease;
+}
+
+.back-link:hover {
+  opacity: 0.6;
+}
+
+.rsvp-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sienna);
+  margin-bottom: 1vh;
+}
+
+.rsvp-heading {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(2.6rem, 8vw, 4.2rem);
+  color: var(--dark-brown);
+  margin-bottom: 1vh;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.rsvp-subheading {
+  font-family: var(--font-sans);
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sienna);
+  margin-bottom: 1.5vh;
+}
+
+.rsvp-deadline-note {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  margin-bottom: 6vh;
+}
+
+.rsvp-deadline-note strong {
+  color: var(--terracotta);
+  font-weight: 700;
+}
+
+/* ================================================================
+   HEADER ANIMATIONS (title letters + eyebrow/subheading fade)
+   ================================================================ */
+.letter-in {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.6em) rotate(6deg);
+  animation: letter-drop-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes letter-drop-in {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+@keyframes fade-in-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================================================
+   ENVELOPE / CARD FLIP CONTAINER
+   ================================================================ */
+.rsvp-envelope {
+  position: relative;
+  width: 100%;
+  perspective: 1600px;
+}
+
+.rsvp-card,
+.rsvp-confirmation {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(122, 46, 39, 0.18);
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1),
+              opacity 0.5s ease;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* ============ FORM CARD ============ */
+.rsvp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6vh;
+  padding: 5vh 6vw;
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+  .rsvp-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.8rem;
+    row-gap: 2.6vh;
+    padding: 6vh 5vw;
+  }
+
+  .field-group--full,
+  .rsvp-submit {
+    grid-column: 1 / -1;
+  }
+}
+
+.rsvp-envelope.is-sealed .rsvp-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(-180deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.8vh;
+}
+
+.field-group label {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--sienna);
+}
+
+.field-group .optional {
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.6;
+  font-size: 0.75rem;
+}
+
+.field-group input[type="text"],
+.field-group select,
+.field-group textarea {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: var(--cream);
+  border: 1px solid rgba(169, 129, 46, 0.35);
+  border-radius: 8px;
+  padding: 1.4vh 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.field-group textarea {
+  resize: vertical;
+  font-family: var(--font-sans);
+}
+
+.field-group input[type="text"]:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 3px rgba(198, 161, 91, 0.25);
+}
+
+/* ============ ATTEND TOGGLE ============ */
+.attend-toggle {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.attend-toggle input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-btn {
+  flex: 1 1 auto;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: var(--text-dark);
+  background: var(--cream);
+  border: 1px solid rgba(169, 129, 46, 0.35);
+  border-radius: 8px;
+  padding: 1.4vh 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.attend-toggle input[type="radio"]:checked + .toggle-btn--yes {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #fff;
+}
+
+.attend-toggle input[type="radio"]:checked + .toggle-btn--no {
+  background: var(--dark-brown);
+  border-color: var(--dark-brown);
+  color: var(--cream);
+}
+
+/* Hide guest count when declining */
+.rsvp-card.is-declining #guest-count-group {
+  display: none;
+}
+
+/* ============ SUBMIT BUTTON ============ */
+.rsvp-submit {
+  align-self: center;
+  margin-top: 1vh;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--dark-brown);
+  padding: 1.4rem 3rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(122, 46, 39, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rsvp-submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 30px rgba(122, 46, 39, 0.35);
+}
+
+/* ============ SUBMIT "SEALING" PULSE ============ */
+.rsvp-submit.is-sealing {
+  animation: button-seal-pulse 0.45s ease;
+  pointer-events: none;
+}
+
+@keyframes button-seal-pulse {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(0.92); box-shadow: 0 6px 14px rgba(122, 46, 39, 0.3); }
+  70%  { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+/* ================================================================
+   ENTRANCE ANIMATION (field groups fade/slide in on load)
+   ================================================================ */
+.field-animate-in {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: field-fade-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes field-fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================================================
+   CONFIRMATION SIDE (wax seal reveal)
+   ================================================================ */
+.rsvp-confirmation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 7vh 6vw;
+  transform: rotateY(180deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rsvp-envelope.is-sealed .rsvp-confirmation {
+  position: relative;
+  transform: rotateY(0deg);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wax-seal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3vh;
+  transform: scale(0);
+}
+
+.rsvp-envelope.is-sealed .wax-seal {
+  animation: seal-stamp 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s forwards;
+}
+
+@keyframes seal-stamp {
+  0%   { transform: scale(0) rotate(-25deg); }
+  70%  { transform: scale(1.15) rotate(4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.wax-seal-initials {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  color: var(--dark-brown);
+}
+
+.confirmation-heading {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--dark-brown);
+  margin-bottom: 1.5vh;
+}
+
+.confirmation-text {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 3vh;
+  max-width: 380px;
+}
+
+.confirmation-link {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--dark-brown);
+  text-decoration: none;
+  border-bottom: 1px solid var(--terracotta);
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.confirmation-link:hover {
+  opacity: 0.6;
+}
+
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--terracotta);
+  background: var(--cream);
+  color: var(--dark-brown);
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(122, 46, 39, 0.15);
+}
+
+.music-toggle.is-playing {
+  animation: music-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes music-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(198,161,91,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(198,161,91,0); }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .rsvp-card,
+  .rsvp-confirmation,
+  .wax-seal,
+  .field-animate-in,
+  .rsvp-submit.is-sealing,
+  .letter-in,
+  .fade-in-up {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* ================================================================
+   MOBILE
+   ================================================================ */
+@media (max-width: 600px) {
+  .rsvp-card {
+    padding: 5vh 6vw;
+  }
+
+  .attend-toggle {
+    flex-direction: column;
+  }
+}

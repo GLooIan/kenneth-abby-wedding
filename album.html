@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Album</title>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mainpage.css">
+<link rel="stylesheet" href="effects.css">
+<link rel="stylesheet" href="album.css">
+</head>
+<body>
+
+<div class="site-wrapper">
+
+<audio id="bg-music" src="assets/timeless.mp3" loop preload="auto"></audio>
+  <button id="music-toggle" class="music-toggle" aria-label="Toggle music">♪</button>
+
+  <div id="fairy-layer"></div>
+
+  <div class="smoke-layer">
+    <img src="assets/smoke.png" class="smoke smoke--1" alt="">
+    <img src="assets/smoke.png" class="smoke smoke--2" alt="">
+    <img src="assets/smoke.png" class="smoke smoke--3" alt="">
+  </div>
+
+  <img src="assets/light.png" class="corner-lights corner-lights--left" alt="">
+  <img src="assets/light.png" class="corner-lights corner-lights--right" alt="">
+
+  <div class="album-page">
+
+    <img src="assets/flower-placeholder.png" class="album-flower" alt="">
+
+    <header class="album-header">
+      <span class="album-eyebrow">
+        <span class="album-word">Our</span>
+        <span class="album-word">Story</span>
+      </span>
+      <h1 class="album-title">
+        <span class="album-word">A</span>
+        <span class="album-word">Few</span>
+        <span class="album-word">Favorite</span>
+        <span class="album-word">Moments</span>
+      </h1>
+    </header>
+
+    <div class="album-columns" id="album-gallery">
+
+      <div class="album-col album-col--left">
+        <div class="album-photo album-photo--feature" data-caption="Just us">
+          <img src="assets/al1.png" alt="Couple photo — replace with your own">
+        </div>
+      </div>
+
+      <div class="album-col album-col--right">
+        <div class="album-photo album-photo--landscape" data-caption="Beach walk">
+          <img src="assets/al3.jpg" alt="Beach walk photo — replace with your own">
+        </div>
+        <div class="album-photo album-photo--portrait" data-caption="Golden hour">
+          <img src="assets/al2.JPG" alt="Silhouette photo — replace with your own">
+        </div>
+        <div class="album-photo album-photo--portrait" data-caption="Together">
+          <img src="assets/al4.JPG" alt="Couple standing photo — replace with your own">
+        </div>
+        <div class="album-photo album-photo--landscape" data-caption="Sunset hug">
+          <img src="assets/al5.JPG" alt="Sunset hug photo — replace with your own">
+        </div>
+      </div>
+
+    </div>
+
+    <a href="mainpage.html" class="album-back-link" id="back-link">Back</a>
+
+  </div>
+
+</div>
+<script src="music.js"></script>
+<script src="mainpage.js"></script>
+<script src="back-nav.js"></script>
+</body>
+</html>
