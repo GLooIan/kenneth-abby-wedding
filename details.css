@@ -90,24 +90,72 @@
 
 .details-heading {
   font-family: var(--font-script);
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-size: clamp(2rem, 9vw, 4.5rem);
   color: var(--dark-brown);
   margin-bottom: 1vh;
   opacity: 0;
   animation: heading-in 1s ease forwards 0.15s;
 }
 
+@media (max-width: 480px) {
+  .details-heading {
+    font-size: 2.1rem;
+    margin-bottom: 1.5vh;
+    padding: 0 12px;
+    line-height: 1.15;
+  }
+}
+
 .details-subheading {
   font-family: var(--font-sans);
-  font-size: clamp(0.85rem, 2vw, 1rem);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--sienna);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2vh;
   margin-bottom: 6vh;
   opacity: 0;
   animation: heading-in 1s ease forwards 0.4s;
 }
 
+.couple-names {
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sienna);
+}
+
+.wedding-date {
+  font-family: var(--font-script);
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  color: var(--terracotta);
+  letter-spacing: 1px;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.wedding-date::before,
+.wedding-date::after {
+  content: '';
+  height: 1px;
+  width: 24px;
+  background: var(--terracotta);
+  opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+  .wedding-date {
+    font-size: 1.6rem;
+    gap: 8px;
+  }
+
+  .wedding-date::before,
+  .wedding-date::after {
+    width: 16px;
+  }
+}
 .section-title {
   font-family: var(--font-script);
   font-weight: 400;

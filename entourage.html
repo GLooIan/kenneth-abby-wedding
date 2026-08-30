@@ -4,218 +4,242 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Entourage </title>
+<link rel="stylesheet" href="effects.css">
 <link rel="stylesheet" href="entourage.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <audio id="bg-music" src="assets/timeless.mp3" loop preload="auto"></audio>
   <button id="music-toggle" class="music-toggle" aria-label="Toggle music">♪</button>
 
+  <div id="fairy-layer"></div>
+
+  <div class="smoke-layer">
+    <img src="assets/smoke.png" class="smoke smoke--1" alt="">
+    <img src="assets/smoke.png" class="smoke smoke--2" alt="">
+    <img src="assets/smoke.png" class="smoke smoke--3" alt="">
+  </div>
+
   <a href="mainpage.html" class="ent-back-btn" aria-label="Back to home">
     <span class="ent-back-arrow">&larr;</span> Back
   </a>
 
-  <header class="ent-hero">
-    <p class="ent-eyebrow">With Love &amp; Gratitude</p>
-    <h1 class="ent-title">Our Entourage</h1>
-    <p class="ent-subtitle">The people standing beside us NOVEMBER 20, 2026</p>
-    <div class="ent-divider" aria-hidden="true"><span></span><span class="ent-divider-mark">✦</span><span></span></div>
-  </header>
+  <div class="ent-page-container">
+    <div class="ent-frame">
 
-  <main>
+      <header class="ent-hero">
+        <p class="ent-eyebrow">With Love &amp; Gratitude</p>
+        <h1 class="ent-title">Our Entourage</h1>
+        <p class="ent-subtitle">The people standing beside us NOVEMBER 20, 2026</p>
+        <div class="ent-divider" aria-hidden="true"><span></span><span class="ent-divider-mark">✦</span><span></span></div>
+      </header>
 
-    <!-- Parents -->
-    <section class="ent-section">
-      <h2 class="ent-section-title">Parents of the Couple</h2>
-      <div class="ent-pair-grid">
-        <div class="ent-block">
-          <p class="ent-block-label">Parents of the Bride</p>
-          <p class="ent-name">Mr. Domingo Perona</p>
-          <p class="ent-name">Mrs. Daisy Perona</p>
-        </div>
-        <div class="ent-block">
-          <p class="ent-block-label">Parents of the Groom</p>
-          <p class="ent-name">Mr. Emalimre Sison </p>
-          <p class="ent-name">Mrs. Rosita Sison</p>
-        </div>
-      </div>
-    </section>
+      <main>
 
-    <!-- Principal Sponsors -->
-    <section class="ent-section ent-section--tinted">
-      <h2 class="ent-section-title">Principal Sponsors</h2>
-      <p class="ent-section-note">Witnesses to our vows and guides in our marriage</p>
-      <div class="ent-sponsor-grid">
-        <ul class="ent-list">
-          <li>Mr. Neil Gatdula</li>
-          <li>Mr. Raul Sadia</li>
-          <li>Mr. Ariel Reovoca</li>
-          <li>Mr. Jose Pizarro</li>
-          <li>Mr. Oriel Sison</li>
-            <li>Mr. Arsenio Sison</li>
-                <li>Mr. Florencio Perona</li>
-                <li>Mr. Alexander Zaragoza</li>
-                <li>Mr. Erickson Sayson</li>
-                <li>Mr. Danilo De Guzman</li>
-                <li>Mr. Albert Custodio</li>
-                <li>Mr. Antonio Canaria</li>
-        </ul>
-        <ul class="ent-list">
-          <li>Mrs. Rebecca Gatdula</li>
-          <li>Mrs. Ma. Victoria Sadia</li>
-          <li>Mrs. Amelita Alejandro</li>
-          <li>Ms. Lhiza Enriquez</li>
-          <li>Mrs. Melinda Sison</li>
-            <li>Mrs. Nena Sison</li>
-                <li>Mrs. Juanita de Luna</li>
-                <li>Mrs. Cecilia Santos</li>
-                <li>Mrs. Vilma Gamil</li>
-                <li>Mrs. Josie Pizarro</li>
-                <li>Mrs. Charito Valentos</li>
-                <li>Mrs. Irene Salaria</li>
-        </ul>
-      </div>
-    </section>
+        <!-- Parents -->
+        <section class="ent-section">
+          <h2 class="ent-section-title">Parents of the Couple</h2>
+          <div class="ent-pair-grid">
+            <div class="ent-block">
+              <p class="ent-block-label">Parents of the Groom</p>
+              <p class="ent-name">Mr. Emalimre Sison </p>
+              <p class="ent-name">Mrs. Rosita Sison</p>
+            </div>
+            <div class="ent-block">
+              <p class="ent-block-label">Parents of the Bride</p>
+              <p class="ent-name">Mr. Domingo Perona</p>
+              <p class="ent-name">Mrs. Daisy Perona</p>
+            </div>
+          </div>
+        </section>
 
-    <!-- Secondary Sponsors -->
-    <section class="ent-section">
-      <h2 class="ent-section-title">Secondary Sponsors</h2>
-      <div class="ent-secondary-grid">
-        <div class="ent-block">
-          <p class="ent-block-label">Candle</p>
-          <p class="ent-name">Cedrick Niño Lagman</p>
-          <p class="ent-name">Pauline Grace Mendoza</p>
-        </div>
-        <div class="ent-block">
-          <p class="ent-block-label">Veil</p>
-          <p class="ent-name">Mhel Alsadon</p>
-          <p class="ent-name">Ma. Cristina Dimaangay</p>
-        </div>
-        <div class="ent-block">
-          <p class="ent-block-label">Cord</p>
-          <p class="ent-name">Azhil John Enriquez</p>
-          <p class="ent-name">Kathleen Sison</p>
-        </div>
-      </div>
-    </section>
+       <!-- Principal Sponsors -->
+<section class="ent-section ent-section--tinted ent-section--sponsors">
+  <h2 class="ent-section-title">Principal Sponsors</h2>
+  <p class="ent-section-note">Witnesses to our vows and guides in our marriage</p>
+  <div class="ent-sponsor-grid">
+    <div class="ent-block">
+      <ul class="ent-list">
+        <li>Mr. Neil Gatdula</li>
+        <li>Mr. Raul Sadia</li>
+        <li>Mr. Ariel Reovoca</li>
+        <li>Mr. Jose Pizarro</li>
+        <li>Mr. Oriel Sison</li>
+        <li>Mr. Arsenio Sison</li>
+        <li>Mr. Florencio Perona</li>
+        <li>Mr. Alexander Zaragoza</li>
+        <li>Mr. Erickson Sayson</li>
+        <li>Mr. Danilo De Guzman</li>
+        <li>Mr. Albert Custodio</li>
+        <li>Mr. Antonio Canaria</li>
+      </ul>
+    </div>
+    <div class="ent-block">
+      <ul class="ent-list">
+        <li>Mrs. Rebecca Gatdula</li>
+        <li>Mrs. Ma. Victoria Sadia</li>
+        <li>Mrs. Amelita Alejandro</li>
+        <li>Ms. Lhiza Enriquez</li>
+        <li>Mrs. Melinda Sison</li>
+        <li>Mrs. Nena Sison</li>
+        <li>Mrs. Juanita de Luna</li>
+        <li>Mrs. Cecilia Santos</li>
+        <li>Mrs. Vilma Gamil</li>
+        <li>Mrs. Josie Pizarro</li>
+        <li>Mrs. Charito Valentos</li>
+        <li>Mrs. Irene Salaria</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <!-- Best Man / Maid of Honor -->
-    <section class="ent-section ent-section--tinted">
-      <div class="ent-pair-grid">
-        <div class="ent-block">
-          <p class="ent-block-label">Best Man</p>
-          <p class="ent-name">John Denver Bangoyna</p>
-        </div>
-        <div class="ent-block">
-          <p class="ent-block-label">Co-Best Man</p>
-          <p class="ent-name">Azhil John Enriquez</p>
-        </div>
-      </div>
+     <!-- Best Man / Maid of Honor -->
+        <section class="ent-section ent-section--tinted">
+          <div class="ent-pair-grid">
+            <div class="ent-block">
+              <p class="ent-block-label">Best Man</p>
+              <p class="ent-name">John Denver Bangoyna</p>
+            </div>
+            <div class="ent-block">
+              <p class="ent-block-label">Co-Best Man</p>
+              <p class="ent-name">Azhil John Enriquez</p>
+            </div>
+          </div>
 
-      <div class="ent-pair-grid">
-        <div class="ent-block">
-          <p class="ent-block-label">Maid of Honor</p>
-          <p class="ent-name">Kathleen Sison</p>
-        </div>
-        <div class="ent-block">
-          <p class="ent-block-label">Matron of Honor</p>
-          <p class="ent-name">Melanie Gamil - Barrion</p>
-        </div>
-      </div>
-    </section>
+          <div class="ent-pair-grid">
+            <div class="ent-block">
+                   <p class="ent-block-label">Matron of Honor</p>
+              <p class="ent-name">Melanie Gamil - Barrion</p>
+            </div>
+            <div class="ent-block">
+        <p class="ent-block-label">Maid of Honor</p>
+              <p class="ent-name">Kathleen Sison</p>
+            </div>
+          </div>
+        </section>
 
-    <!-- Groomsmen / Bridesmaids -->
-    <section class="ent-section">
-      <h2 class="ent-section-title">Groomsmen &amp; Bridesmaids</h2>
-      <div class="ent-pair-grid">
-        <div class="ent-block">
-          <p class="ent-block-label">Groomsmen</p>
-          <ul class="ent-list">
-            <li>Sean Gabriel Garcia</li>
-            <li>Andrei Josh Andres]</li>
-            <li>Aimar Cyril Alejandro</li>
-            <li>Angelo Clint Alejandro</li>
-            <li>Joey Jai Enriquez</li>
-            <li>Christian Niniel Rivera</li>
-            <li>Mark Anthony Sison</li>
-            <li>Michael John Sison</li>
-          </ul>
-        </div>
-        <div class="ent-block">
-          <p class="ent-block-label">Bridesmaids</p>
-          <ul class="ent-list">
-            <li>Isabelle Isanan</li>
-            <li>Christine Joyce Laher</li>
-            <li>Narleah Pangilinan - Dayap</li>
-            <li>Pamela Bautista - Moral</li>
-            <li>Joy Marie Baynado - Fontanilla</li>
-            <li>Cristine Joy Malagayo</li>
-            <li>Cindylen Limpiado</li>
-            <li>Vilma Maniaol - Verba</li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
-    <!-- Bearers -->
-    <section class="ent-section ent-section--tinted">
-      <h2 class="ent-section-title">Bearers</h2>
-      <div class="ent-secondary-grid">
-        <div class="ent-block">
-          <p class="ent-block-label">Ring Bearer</p>
-          <p class="ent-name">John Denver Bangoyna</p>
-                    <p class="ent-name">Melanie Gamil - Barrion</p>
-        </div>
-        <div class="ent-block">
-          <p class="ent-block-label">Bible Bearer</p>
-          <p class="ent-name">Eunice Dimaangay</p>
-          <p class="ent-name">Francis Benedict Sadia</p>
-        </div>
-        <div class="ent-block">
-          <p class="ent-block-label">Coin Bearer</p>
-          <p class="ent-name">Jonas Pascual</p>
-             <p class="ent-name">Angela Garcia</p>
-        </div>
-      </div>
-    </section>
+        <!-- Secondary Sponsors -->
+        <section class="ent-section">
+          <h2 class="ent-section-title">Secondary Sponsors</h2>
+          <div class="ent-secondary-grid">
+            <div class="ent-block">
+              <p class="ent-block-label">Candle</p>
+              <p class="ent-name">Cedrick Niño Lagman</p>
+              <p class="ent-name">Pauline Grace Mendoza</p>
+            </div>
+            <div class="ent-block">
+              <p class="ent-block-label">Veil</p>
+              <p class="ent-name">Mhel Alsadon</p>
+              <p class="ent-name">Ma. Cristina Dimaangay</p>
+            </div>
+            <div class="ent-block">
+              <p class="ent-block-label">Cord</p>
+              <p class="ent-name">Azhil John Enriquez</p>
+              <p class="ent-name">Kathleen Sison</p>
+            </div>
+          </div>
+        </section>
 
-    <!-- Flower Girl -->
-    <section class="ent-section">
-      <h2 class="ent-section-title">Flower Girl</h2>
-      <div class="ent-pair-grid">
-        <div class="ent-block">
-          <p class="ent-name">Maddie Fulgencio</p>
-          <p class="ent-name">Seanna Gizella Garcia</p>
-          <p class="ent-name">Julianne Bartolome</p>
-          <p class="ent-name">Lery Dimaangay</p>
-        </div>
-      </div>
-    </section>
+       
 
-    <!-- Banner Bearer -->
-    <section class="ent-section ent-section--tinted">
-      <h2 class="ent-section-title">Banner Bearer</h2>
-      <div class="ent-pair-grid">
-        <div class="ent-block">
-          <p class="ent-name">Justin Reign Cuarta</p>
-               <p class="ent-name">Charlz Fulgencio</p>
-                    <p class="ent-name">John Vincent Pineda</p>
-                         <p class="ent-name">John Mark Pineda</p>
-                              <p class="ent-name">Jhack Perona</p>
-                                   <p class="ent-name">Jace Perona</p>
-        </div>
-      </div>
-    </section>
+        <!-- Groomsmen / Bridesmaids -->
+        <section class="ent-section">
+          <h2 class="ent-section-title">Groomsmen &amp; Bridesmaids</h2>
+          <div class="ent-pair-grid">
+            <div class="ent-block">
+              <p class="ent-block-label">Groomsmen</p>
+              <ul class="ent-list">
+                <li>Sean Gabriel Garcia</li>
+                <li>Andrei Josh Andres</li>
+                <li>Aimar Cyril Alejandro</li>
+                <li>Angelo Clint Alejandro</li>
+                <li>Joey Jai Enriquez</li>
+                <li>Christian Niniel Rivera</li>
+                <li>Mark Anthony Sison</li>
+                <li>Michael John Sison</li>
+              </ul>
+            </div>
+            <div class="ent-block">
+              <p class="ent-block-label">Bridesmaids</p>
+              <ul class="ent-list">
+                <li>Isabel Jorge</li>
+                <li>Christine Joyce Laher</li>
+                <li>Narleah Pangilinan - Dayap</li>
+                <li>Pamela Bautista - Moral</li>
+                <li>Joy Marie Baynado - Fontanilla</li>
+                <li>Cristine Joy Malagayo</li>
+                <li>Cindylen Limpiado</li>
+                <li>Vilma Maniaol - Verba</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-  </main>
+        <!-- Bearers -->
+        <section class="ent-section ent-section--tinted">
+          <h2 class="ent-section-title">Bearers</h2>
+          <div class="ent-secondary-grid">
+            <div class="ent-block">
+              <p class="ent-block-label">Ring Bearer</p>
+              <p class="ent-name">John Denver Bangoyna</p>
+                        <p class="ent-name">Melanie Gamil - Barrion</p>
+            </div>
+            <div class="ent-block">
+              <p class="ent-block-label">Bible Bearer</p>
+              <p class="ent-name">Eunice Dimaangay</p>
+              <p class="ent-name">Francis Benedict Sadia</p>
+            </div>
+            <div class="ent-block">
+              <p class="ent-block-label">Coin Bearer</p>
+              <p class="ent-name">Jonas Pascual</p>
+                 <p class="ent-name">Angela Garcia</p>
+            </div>
+          </div>
+        </section>
 
-  <footer class="ent-footer">
-    <p>See you on our special day</p>
-    <a href="mainpage.html" class="ent-back-link">← Back Home</a>
-  </footer>
+        <!-- Flower Girl -->
+        <section class="ent-section">
+          <h2 class="ent-section-title">Flower Girl</h2>
+          <div class="ent-pair-grid">
+            <div class="ent-block">
+              <p class="ent-name">Maddie Fulgencio</p>
+              <p class="ent-name">Seanna Gizella Garcia</p>
+              <p class="ent-name">Julianne Bartolome</p>
+              <p class="ent-name">Lery Dimaangay</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Banner Bearer -->
+        <section class="ent-section ent-section--tinted">
+          <h2 class="ent-section-title">Banner Bearer</h2>
+          <div class="ent-pair-grid">
+            <div class="ent-block">
+              <p class="ent-name">Justin Reign Cuarta</p>
+                   <p class="ent-name">Charlz Fulgencio</p>
+                        <p class="ent-name">John Vincent Pineda</p>
+                             <p class="ent-name">John Mark Pineda</p>
+                                  <p class="ent-name">Jhack Perona</p>
+                                       <p class="ent-name">Jace Perona</p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="ent-footer">
+        <p>See you on our special day</p>
+        <a href="mainpage.html" class="ent-back-link">← Back Home</a>
+      </footer>
+
+    </div>
+  </div>
+
 <script src="music.js"></script>
+<script src="mainpage.js"></script>
 </body>
 
 </html>

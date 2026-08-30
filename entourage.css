@@ -1,5 +1,5 @@
 /* ================================================================
-   Entourage Page — matches home.css palette
+   Entourage Page — matches home.css / details.css palette
    ================================================================ */
 
 :root {
@@ -9,10 +9,7 @@
   --cream:       #fcf7f3;
   --gold-light:  #E9CD82;
   --text-dark:   #5C231D;
-
-  --font-script: 'Alex Brush', cursive;
-  --font-sans:   'Montserrat', sans-serif;
-  --font-serif:  'Playfair Display', serif;
+  --name-blue:   #3B5A73;
 }
 
 * {
@@ -26,6 +23,43 @@ body {
   font-family: var(--font-sans);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* ================================================================
+   PAGE LAYOUT / FRAME
+   (mirrors .details-page / .details-frame from details.css)
+   ================================================================ */
+.ent-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 6vh 5vw 10vh;
+  position: relative;
+  z-index: 1;
+}
+
+.ent-frame {
+  width: 100%;
+  background-color: #fff;
+  background-image: url('assets/ento2.png');
+  background-repeat: repeat;
+  background-size: auto;
+  border: 1.5px solid var(--terracotta);
+  border-radius: 24px;
+  padding: 6vh 0;
+  box-shadow: 0 16px 40px rgba(122, 46, 39, 0.14);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 450px) {
+  .ent-frame {
+    padding: 5vh 0;
+    border-radius: 16px;
+  }
 }
 
 /* ================================================================
@@ -78,7 +112,7 @@ body {
   transform: translateX(-3px);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
   .ent-back-btn {
     top: 14px;
     left: 14px;
@@ -93,7 +127,7 @@ body {
 .ent-hero {
   position: relative;
   text-align: center;
-  padding: 10vh 5vw 6vh;
+  padding: 0 5vw 6vh;
 }
 
 .ent-eyebrow {
@@ -168,10 +202,8 @@ body {
 }
 
 .ent-section--tinted {
-  background: #fffdfb;
+  background: transparent;
   max-width: 100%;
-  box-shadow: inset 0 1px 0 rgba(198, 161, 91, 0.25),
-              inset 0 -1px 0 rgba(198, 161, 91, 0.25);
 }
 
 .ent-section-title {
@@ -200,6 +232,14 @@ body {
   margin: 1rem 0 1.5rem;
 }
 
+/* Principal Sponsors — larger title/note */
+.ent-section--sponsors .ent-section-title {
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+}
+
+.ent-section--sponsors .ent-section-note {
+  font-size: 1.05rem;
+}
 /* ================================================================
    BLOCKS & CARDS
    ================================================================ */
@@ -244,7 +284,7 @@ body {
 .ent-name {
   font-family: var(--font-serif);
   font-size: 1.1rem;
-  color: var(--dark-brown);
+  color: var(--name-blue);
   margin: 0.3rem 0;
 }
 
@@ -253,12 +293,14 @@ body {
   padding: 0;
   margin: 0;
 }
-
 .ent-list li {
   font-family: var(--font-serif);
   font-size: 1.1rem;
-  color: var(--dark-brown);
+  color: var(--name-blue);
   margin: 0.4rem 0;
+}
+.ent-sponsor-grid .ent-block {
+  max-width: 320px;
 }
 
 /* ================================================================
@@ -266,7 +308,7 @@ body {
    ================================================================ */
 .ent-footer {
   text-align: center;
-  padding: 7vh 5vw 11vh;
+  padding: 7vh 5vw 0;
   position: relative;
 }
 
@@ -279,8 +321,8 @@ body {
 }
 
 .ent-footer p {
-  font-family: var(--font-script);
-  font-size: 2.3rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
   color: var(--dark-brown);
   margin-bottom: 1.25rem;
 }
@@ -332,7 +374,7 @@ body {
 /* ================================================================
    MOBILE
    ================================================================ */
-@media (max-width: 500px) {
+@media (max-width: 450px) {
   .ent-pair-grid,
   .ent-secondary-grid,
   .ent-sponsor-grid {
