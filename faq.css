@@ -15,9 +15,10 @@
   --font-sans:   'Montserrat', sans-serif;
 
   /* Pastel palette for the FAQ pill cards */
-  --pastel-blue:   #CFE3EE;
-  --pastel-yellow: #EDE3A6;
-  --pastel-green:  #CFE0BC;
+  --pastel-blue:      #CFE3EE;
+  --pastel-yellow:    #EDE3A6;
+  --pastel-green:     #CFE0BC;
+  --pastel-terracotta: #F0DCC9;
 }
 
 /* ================================================================
@@ -123,9 +124,10 @@
   box-shadow: 0 18px 34px rgba(122, 46, 39, 0.2);
 }
 
-.faq-item--blue   { background: var(--pastel-blue); }
-.faq-item--yellow { background: var(--pastel-yellow); }
-.faq-item--green  { background: var(--pastel-green); }
+.faq-item--blue       { background: var(--pastel-blue); }
+.faq-item--yellow     { background: var(--pastel-yellow); }
+.faq-item--green      { background: var(--pastel-green); }
+.faq-item--terracotta { background: var(--pastel-terracotta); }
 
 .faq-question {
   font-family: 'Playfair Display', serif;
@@ -149,6 +151,17 @@
 
 .faq-answer.edit-me {
   opacity: 0.85;
+}
+
+.faq-note {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-dark);
+  max-width: 340px;
+  margin: 1.5vh auto 0;
+  opacity: 0.7;
 }
 
 /* ================================================================
@@ -198,6 +211,7 @@
   0%, 100% { box-shadow: 0 0 0 0 rgba(198,161,91,0.4); }
   50% { box-shadow: 0 0 0 8px rgba(198,161,91,0); }
 }
+
 
 /* ================================================================
    FLOWER DECORATIONS
